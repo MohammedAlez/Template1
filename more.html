@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css files/style.css">
+    <link rel="stylesheet" href="css files/normalize.css">
+    <link rel="stylesheet" href="css files/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="main-heading">
+                <h2>PORTFOLIO</h2>
+                <p>Lorem ipsum  adipisicing elit. Animi deserunt corporis ex accusamus vel reiciendis libero</p>
+            </div> 
+            <ul class="shuffle">
+                <li class="select" data-type="all">ALL</li>
+                <li class="select" data-type="app">APP</li>
+                <li class="select on" data-type="pht">PHOTOGRAPHY</li>
+                <li class="select " data-type="web">WEB</li>
+                <li class="select" data-type="print">PRINT</li>
+            </ul>
+        </div>
+        <div class="img-content">
+            <div class="box all web">
+                <img src="image/1.jpg" alt="">
+                <div class="caption">
+                    <h3>Title</h3>
+                    <p>hello world</p>
+                </div>
+            </div>
+            <div class="box app all">
+                <img src="image/1.jpg" alt="">
+                <div class="caption">
+                    <h3>Title</h3>
+                    <p>hello world</p>
+                </div>
+            </div>
+            <div class="box app all">
+                <img src="image/1.jpg" alt="">
+                <div class="caption">
+                    <h3>Title</h3>
+                    <p>hello world</p>
+                </div>
+            </div>
+            <div class="box web all">
+                <img src="image/1.jpg" alt="">
+                <div class="caption">
+                    <h3>Title</h3>
+                    <p>hello world</p>
+                </div>
+            </div>
+            <div class="box app all">
+                <img src="image/1.jpg" alt="">
+                <div class="caption">
+                    <h3>Title</h3>
+                    <p>hello world</p>
+                </div>
+            </div>
+            <div class="box web all">
+                <img src="image/1.jpg" alt="">
+                <div class="caption">
+                    <h3>Title</h3>
+                    <p>hello world</p>
+                </div>
+            </div>
+            <div class="box print all">
+                <img src="image/1.jpg" alt="">
+                <div class="caption">
+                    <h3>Title</h3>
+                    <p>hello world</p>
+                </div>
+            </div>
+            <div class="box print all">
+                <img src="image/1.jpg" alt="">
+                <div class="caption">
+                    <h3>Title</h3>
+                    <p>hello world</p>
+                </div>
+            </div>
+            <div class="box pht all">
+                <img src="image/1.jpg" alt="">
+                <div class="caption">
+                    <h3>Title</h3>
+                    <p>hello world</p>
+                </div>
+            </div>
+            <div class="box print all">
+                <img src="image/1.jpg" alt="">
+                <div class="caption">
+                    <h3>Title</h3>
+                    <p>hello world</p>
+                </div>
+            </div>
+            <div class="box pht all">
+                <img src="image/1.jpg" alt="">
+                <div class="caption">
+                    <h3>Title</h3>
+                    <p>hello world</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <a href="" class="more">more</a> -->
+    </div>
+
+
+    <script >
+        let shuffle = Array.from(document.querySelectorAll(".shuffle li"));
+        let Pelements = Array.from(document.querySelectorAll(".img-content .box"))
+        console.log(Pelements)
+        shuffle.forEach((el)=>{
+            el.addEventListener("click",()=>{
+                shuffle.forEach((ell)=>{
+                    ell.classList.remove("on");
+                })
+                el.classList.add("on")
+                Pelements.forEach((e)=>{
+                    if((e.classList.contains(el.dataset.type))){
+                        e.style.display = "block";
+                    }else{
+                        e.style.display = "none";
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>
